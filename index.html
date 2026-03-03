@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aman Tiwari — Not Your Average Teacher</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050508'/%3E%3Ccircle cx='32' cy='32' r='28' fill='none' stroke='%23b8ff3c' stroke-width='1.5' stroke-dasharray='6 4' opacity='0.5'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23b8ff3c' stroke-width='1' stroke-dasharray='3 5' opacity='0.35'/%3E%3Ccircle cx='32' cy='32' r='13' fill='%23b8ff3c' fill-opacity='0.1' stroke='%23b8ff3c' stroke-width='1.5'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='Arial Black,sans-serif' font-size='13' font-weight='900' fill='%23b8ff3c' letter-spacing='1'%3EAT%3C/text%3E%3Ccircle cx='60' cy='32' r='3.5' fill='%23b8ff3c'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:wght@200;400;600;800&display=swap" rel="stylesheet">
 <style>
@@ -290,8 +291,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:0 32px;height:56px;d
 .cc-lbl{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.28em;color:rgba(245,245,240,.3);margin-bottom:5px;text-transform:uppercase;}
 .cc-val{font-size:15px;font-weight:600;color:var(--white);}
 .cc-arr{margin-left:auto;font-size:16px;color:rgba(245,245,240,.15);transition:all .3s;flex-shrink:0;}
+.cc-arr-lg{font-size:22px;}
 .cc:hover .cc-arr{color:var(--lime);transform:translateX(4px);}
 .cc.pink-cc:hover .cc-arr{color:var(--pink);}
+.cc-icon-lg{width:56px!important;height:56px!important;font-size:26px!important;}
+.cc-val-lg{font-size:20px!important;}
 .avail-badge{display:flex;align-items:center;gap:12px;padding:18px 24px;background:rgba(184,255,60,.05);border:1px solid rgba(184,255,60,.18);border-radius:12px;}
 .avail-text{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;color:rgba(245,245,240,.45);line-height:1.7;}
 .avail-text strong{color:var(--lime);font-weight:400;}
@@ -302,82 +306,206 @@ footer{padding:28px 60px;border-top:1px solid rgba(255,255,255,.05);display:flex
 .fm{font-family:'Space Mono',monospace;font-size:10px;color:rgba(245,245,240,.28);text-align:center;letter-spacing:.08em;}
 .fr{font-family:'Space Mono',monospace;font-size:9px;color:rgba(245,245,240,.18);}
 
-/* ═══ TABLET ═══ */
+/* ═══ TABLET 1024 ═══ */
 @media(max-width:1024px){
-  .hero{grid-template-columns:1fr 1fr;}
-  .hero-left{padding:100px 40px 70px;}
-  .hero-right{padding:100px 30px 70px 16px;}
-  .story-s,.xp-s,.val-s,.contact-s{padding-left:40px;padding-right:40px;}
-  .z-div{padding:0 40px;}
-  .glitch-wrap{padding:80px 40px;}
+  nav{padding:0 24px;}
+  .hero-left{padding:90px 36px 60px;}
+  .hero-right{padding:90px 24px 60px 16px;}
+  .hero-h1{font-size:clamp(58px,7.5vw,100px);}
+  .story-s,.xp-s,.val-s,.contact-s{padding-left:36px;padding-right:36px;}
+  .z-div{padding:0 36px;}
+  .glitch-wrap{padding:80px 36px;}
   .xp-grid{grid-template-columns:repeat(2,1fr);}
   .xc.feat{grid-column:span 2;}
-  footer{padding:24px 40px;}
+  footer{padding:24px 36px;}
 }
 
-/* ═══ MOBILE ═══ */
+/* ═══ MOBILE 768 ═══ */
 @media(max-width:768px){
-  nav{padding:0 20px;}
+  /* NAV */
+  nav{padding:0 18px;height:54px;}
   .nav-pill,.nav-status{display:none;}
   .ham{display:flex;}
-  .mq-wrap{margin-top:56px;}
-  .mq-track span{font-size:9px;padding:0 20px;letter-spacing:.2em;}
-  .mq-bot-track span{font-size:14px;padding:0 18px;}
-  .hero{grid-template-columns:1fr;min-height:auto;padding-bottom:60px;}
-  .hero-left{padding:80px 24px 40px;}
-  .hero-right,.hero-clock,.hero-terminal,.hero-scroll{display:none;}
-  .hero-h1{font-size:clamp(56px,16vw,84px);}
+  .logo-role{display:none;}
+  .logo-name{font-size:15px;}
+
+  /* MARQUEE */
+  .mq-wrap{margin-top:54px;}
+  .mq-track span{font-size:8px;padding:0 16px;letter-spacing:.18em;}
+  .mq-bot-track span{font-size:13px;padding:0 16px;}
+
+  /* HERO — single column */
+  .hero{
+    display:block;
+    min-height:auto;
+    padding-bottom:50px;
+  }
+  .hero-left{
+    padding:80px 20px 40px;
+    width:100%;
+  }
+  .hero-right,.hero-clock,.hero-terminal,.hero-scroll{display:none!important;}
+  .b1{width:260px;height:260px;top:-60px;left:-100px;}
+  .b2{width:220px;height:220px;bottom:-60px;right:-60px;}
+  .b3{width:180px;height:180px;}
+
+  /* HERO TEXT */
+  .hero-h1{
+    font-size:clamp(52px,15vw,80px);
+    line-height:.92;
+    margin-bottom:16px;
+  }
   .h-outline{-webkit-text-stroke:1.5px var(--lime);}
-  .act-text{font-size:8px;}
-  .hero-sub{font-size:14px;max-width:100%;margin-bottom:22px;}
-  .hero-btns{flex-direction:column;gap:10px;}
-  .btn-p,.btn-o{width:100%;justify-content:center;padding:14px 24px;font-size:11px;}
-  .b1{width:300px;height:300px;}.b2{width:250px;height:250px;}.b3{width:200px;height:200px;}
-  .story-s,.xp-s,.val-s,.contact-s{padding:60px 24px;}
-  .z-div{padding:0 24px;}
-  .story-header{flex-direction:column;gap:14px;margin-bottom:48px;}
-  .story-big-label{font-size:clamp(70px,22vw,120px);}
+  .activity-badge{
+    padding:6px 12px 6px 8px;
+    margin-bottom:14px;
+  }
+  .act-text{font-size:8px;letter-spacing:.06em;}
+  .hero-tag{font-size:9px;padding:4px 10px;margin-bottom:12px;}
+  .hero-role-line{margin-bottom:8px;}
+  .role-static,.role-typed{font-size:10px;}
+  .hero-sub{
+    font-size:14px;
+    max-width:100%;
+    margin-bottom:20px;
+    line-height:1.65;
+  }
+  .skills-ticker-wrap{margin-bottom:24px;}
+  .sk{font-size:8px;padding:4px 11px;}
+  .hero-btns{
+    flex-direction:column;
+    gap:10px;
+    width:100%;
+  }
+  .btn-p,.btn-o{
+    width:100%;
+    justify-content:center;
+    padding:14px 20px;
+    font-size:11px;
+  }
+
+  /* SECTIONS */
+  .story-s,.xp-s,.val-s,.contact-s{padding:52px 20px;}
+  .z-div{padding:0 20px;}
+
+  /* STORY */
+  .story-header{flex-direction:column;gap:12px;margin-bottom:40px;}
+  .story-big-label{font-size:clamp(64px,20vw,110px);}
   .story-intro-text{max-width:100%;font-size:13px;}
-  .chapter{grid-template-columns:48px 1fr;}
-  .chapter-num{padding:24px 0 24px 4px;font-size:9px;}
-  .chapter-body{padding:24px 16px 24px 12px;}
-  .chapter-title{font-size:clamp(26px,8vw,40px);margin-bottom:10px;}
-  .chapter-text{font-size:14px;}
-  .chapter-quote{font-size:clamp(22px,7vw,36px);}
-  .story-footer-strip{flex-direction:column;}
-  .sfs-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.07);padding:18px 24px;}
+  .chapter{grid-template-columns:44px 1fr;}
+  .chapter-num{padding:22px 0 22px 4px;font-size:9px;}
+  .chapter-body{padding:22px 14px 22px 10px;}
+  .chapter-title{font-size:clamp(24px,7.5vw,38px);margin-bottom:8px;}
+  .chapter-text{font-size:13px;line-height:1.75;}
+  .chapter-quote{font-size:clamp(20px,6.5vw,32px);}
+  .story-footer-strip{flex-direction:column;border-radius:8px;}
+  .sfs-item{
+    border-right:none;
+    border-bottom:1px solid rgba(255,255,255,.07);
+    padding:16px 20px;
+    display:flex;align-items:center;gap:14px;text-align:left;
+  }
   .sfs-item:last-child{border-bottom:none;}
-  .sfs-num{font-size:30px;}
-  .glitch-wrap{padding:60px 24px;}
-  .glitch{font-size:clamp(38px,13vw,70px);}
-  .mission-sub{font-size:14px;}
-  .xp-grid{grid-template-columns:1fr;margin-top:36px;}
-  .xc.feat{grid-column:span 1;}
-  .xc{padding:24px;}
-  .xt{font-size:clamp(24px,7vw,36px);}
-  .val-s{padding:60px 24px;}
-  .val-scroll{gap:10px;margin-top:36px;}
-  .vc{min-width:150px;padding:24px 16px;}
-  .ve{font-size:28px;}.vn{font-size:16px;}
-  .contact-s{padding:60px 24px 80px;}
-  .contact-h{font-size:clamp(48px,15vw,90px);margin-bottom:12px;}
+  .sfs-num{font-size:28px;min-width:60px;}
+  .sfs-label{font-size:9px;}
+
+  /* MISSION */
+  .glitch-wrap{padding:52px 20px;}
+  .glitch{font-size:clamp(34px,12vw,64px);}
+  .mission-sub{font-size:13px;padding:0 4px;}
+
+  /* XP */
+  .xp-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+    margin-top:28px;
+  }
+  .xc,.xc.feat,.xc.edu-card{
+    grid-column:span 1!important;
+    padding:22px 18px;
+  }
+  /* Fix the edu+cert inline layout */
+  .edu-flex{
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    gap:16px!important;
+  }
+  .edu-right{
+    margin-left:0!important;
+    width:100%;
+  }
+  .xt{font-size:clamp(22px,6.5vw,32px);}
+  .xo{font-size:9px;}
+
+  /* VALUES */
+  .val-scroll{gap:10px;margin-top:28px;padding-bottom:8px;}
+  .vc{min-width:130px;padding:20px 14px;}
+  .ve{font-size:26px;margin-bottom:10px;}
+  .vn{font-size:14px;}
+
+  /* CONTACT */
+  .contact-s{padding:52px 20px 70px;}
+  .contact-h{
+    font-size:clamp(44px,14vw,84px);
+    margin-bottom:10px;
+  }
   .ch-out{-webkit-text-stroke:1.5px rgba(245,245,240,.18);}
-  .contact-sub{font-size:10px;letter-spacing:.08em;margin-bottom:36px;}
-  .contact-links-full{max-width:100%;}
-  .cc{padding:20px;gap:14px;}
-  .cc-val{font-size:14px!important;}
-  .cc-icon{width:40px!important;height:40px!important;font-size:20px!important;}
-  .avail-badge{padding:14px 18px;}
-  .avail-text{font-size:9px;}
-  footer{flex-direction:column;gap:12px;text-align:center;padding:24px 20px;}
-  .fl{font-size:22px;}.fm{font-size:9px;}.fr{font-size:8px;}
+  .contact-sub{font-size:9px;letter-spacing:.07em;margin-bottom:28px;}
+  .contact-links-full{max-width:100%;gap:10px;}
+  .cc{
+    padding:18px 16px;
+    gap:12px;
+  }
+  .cc-icon,.cc-icon-lg{
+    width:40px!important;
+    height:40px!important;
+    font-size:18px!important;
+    flex-shrink:0;
+    border-radius:8px!important;
+  }
+  .cc-lbl{font-size:8px!important;}
+  .cc-val,.cc-val-lg{font-size:14px!important;}
+  .cc-arr,.cc-arr-lg{font-size:16px!important;}
+  .avail-badge{
+    padding:14px 16px;
+    gap:10px;
+    border-radius:10px;
+  }
+  .avail-text{font-size:9px;line-height:1.6;}
+
+  /* FOOTER */
+  footer{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+    padding:22px 20px;
+  }
+  .fl{font-size:20px;}
+  .fm{font-size:9px;}
+  .fr{font-size:8px;}
 }
+
+/* ═══ SMALL PHONE 400 ═══ */
 @media(max-width:400px){
-  .hero-h1{font-size:clamp(48px,15vw,68px);}
+  .hero-left{padding:72px 16px 36px;}
+  .hero-h1{font-size:clamp(44px,14vw,64px);}
+  .h-outline{-webkit-text-stroke:1px var(--lime);}
+  .activity-badge{padding:5px 10px 5px 7px;}
+  .act-text{font-size:7px;}
+  .hero-sub{font-size:13px;}
+  .btn-p,.btn-o{font-size:10px;padding:13px 16px;}
+  .story-s,.xp-s,.val-s,.contact-s{padding:44px 16px;}
+  .z-div{padding:0 16px;}
   .chapter{grid-template-columns:36px 1fr;}
-  .chapter-body{padding:20px 12px;}
-  .glitch{font-size:clamp(30px,12vw,52px);}
-  .contact-h{font-size:clamp(40px,14vw,72px);}
+  .chapter-body{padding:18px 10px;}
+  .chapter-title{font-size:clamp(20px,7vw,30px);}
+  .chapter-text{font-size:13px;}
+  .glitch{font-size:clamp(28px,11vw,48px);}
+  .contact-h{font-size:clamp(38px,13vw,64px);}
+  .cc{padding:16px 14px;gap:10px;}
+  .cc-val{font-size:13px!important;}
+  .vc{min-width:110px;padding:18px 10px;}
+  .vn{font-size:13px;}
 }
 </style>
 </head>
@@ -731,16 +859,16 @@ footer{padding:28px 60px;border-top:1px solid rgba(255,255,255,.05);display:flex
       </ul>
     </div>
 
-    <div class="xc reveal" style="grid-column:span 2;background:linear-gradient(135deg,rgba(60,240,255,0.05),rgba(5,5,8,0.8));border-color:rgba(60,240,255,0.13);">
-      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
-        <span style="font-size:34px;">📚</span>
+    <div class="xc edu-card reveal" style="grid-column:span 2;background:linear-gradient(135deg,rgba(60,240,255,0.05),rgba(5,5,8,0.8));border-color:rgba(60,240,255,0.13);">
+      <div class="edu-flex" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+        <span style="font-size:34px;flex-shrink:0;">📚</span>
         <div>
           <span class="xy b">EDUCATION</span>
           <div class="xt">Bachelor of Science</div>
           <div class="xo">Mumbai University · 2017–2021</div>
         </div>
-        <div style="margin-left:auto;display:flex;align-items:center;gap:14px;">
-          <span style="font-size:28px;">🤖</span>
+        <div class="edu-right" style="margin-left:auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+          <span style="font-size:28px;flex-shrink:0;">🤖</span>
           <div>
             <span class="xy o">CERTIFICATION</span>
             <div class="xt" style="font-size:22px;">ChatGPT &amp; AI Tools</div>
@@ -784,21 +912,21 @@ footer{padding:28px 60px;border-top:1px solid rgba(255,255,255,.05);display:flex
   <div class="contact-links-full reveal">
 
     <a href="tel:9325515823" class="cc cc-big">
-      <div class="cc-icon cci-l" style="width:56px;height:56px;font-size:26px;">📱</div>
+      <div class="cc-icon cci-l cc-icon-lg">📱</div>
       <div>
         <div class="cc-lbl">Phone — Call or WhatsApp</div>
-        <div class="cc-val" style="font-size:20px;">+91 93255 15823</div>
+        <div class="cc-val cc-val-lg">+91 93255 15823</div>
       </div>
-      <div class="cc-arr" style="font-size:22px;">↗</div>
+      <div class="cc-arr cc-arr-lg">↗</div>
     </a>
 
     <a href="/cdn-cgi/l/email-protection#29484448475d405e485b4011111019694e44484045074a4644" class="cc cc-big pink-cc">
-      <div class="cc-icon cci-p" style="width:56px;height:56px;font-size:26px;">✉️</div>
+      <div class="cc-icon cci-p cc-icon-lg">✉️</div>
       <div>
         <div class="cc-lbl">Email — Always open</div>
-        <div class="cc-val" style="font-size:20px;"><span class="__cf_email__" data-cfemail="16777b7778627f6177647f2e2e2f2656717b777f7a3875797b">[email&#160;protected]</span></div>
+        <div class="cc-val cc-val-lg"><span class="__cf_email__" data-cfemail="16777b7778627f6177647f2e2e2f2656717b777f7a3875797b">[email&#160;protected]</span></div>
       </div>
-      <div class="cc-arr" style="font-size:22px;">↗</div>
+      <div class="cc-arr cc-arr-lg">↗</div>
     </a>
 
     <div class="avail-badge">
